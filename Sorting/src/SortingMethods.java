@@ -71,4 +71,86 @@ public class SortingMethods {
         nums[x] = nums[y];
         nums[y] = temp;
     }
+
+    void cocktailSort()
+    {
+        System.out.println("\n\nShaker sorting");
+
+        int[] array = new int[10];
+
+        for (int i = 0; i < array.length; i++) {
+            array[i] = random.nextInt(100);
+        }
+
+        System.out.println(Arrays.toString(array));
+
+        boolean swapped = true;
+        int start = 0;
+        int end = array.length;
+
+        while (swapped == true)
+        {
+            swapped = false;
+
+            for (int i = start; i < end - 1; ++i)
+            {
+                if (array[i] > array[i + 1]) {
+                    int temp = array[i];
+                    array[i] = array[i + 1];
+                    array[i + 1] = temp;
+                    swapped = true;
+                }
+            }
+
+            if (swapped == false)
+                break;
+
+            swapped = false;
+
+            end = end - 1;
+
+            for (int i = end - 1; i >= start; i--)
+            {
+                if (array[i] > array[i + 1])
+                {
+                    int temp = array[i];
+                    array[i] = array[i + 1];
+                    array[i + 1] = temp;
+                    swapped = true;
+                }
+            }
+
+            start = start + 1;
+        }
+
+        System.out.println(Arrays.toString(array));
+    }
+
+    void insertionSort(){
+        System.out.println("\n\nInsertion sorting");
+
+        int[] array = new int[10];
+
+        for (int i = 0; i < array.length; i++) {
+            array[i] = random.nextInt(100);
+        }
+
+        System.out.println(Arrays.toString(array));
+
+        for (int left = 0; left < array.length; left++) {
+            int value = array[left];
+
+            int i = left - 1;
+
+            for (; i >= 0; i--) {
+                if (value < array[i]) {
+                    array[i + 1] = array[i];
+                } else {
+                    break;
+                }
+            }
+            array[i + 1] = value;
+        }
+        System.out.println(Arrays.toString(array));
+    }
 }
