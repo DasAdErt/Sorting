@@ -1,21 +1,19 @@
 import java.util.Arrays;
 import java.util.Random;
 
-import static java.util.Collections.swap;
-
 public class SortingMethods {
     Random random = new Random();
 
     void bubble() { //пузырьковый
         System.out.println("Bubble sorting");
 
-        int[] array = new int[10];
+        int[] array = new int[100000];
 
         for (int i = 0; i < array.length; i++) {
             array[i] = random.nextInt(100);
         }
 
-        System.out.println(Arrays.toString(array));
+        //System.out.println(Arrays.toString(array));
 
         int[] sortArray = new int[array.length];
 
@@ -31,19 +29,19 @@ public class SortingMethods {
             }
         }
 
-        System.out.println(Arrays.toString(sortArray));
+        //System.out.println(Arrays.toString(sortArray));
     }
 
     void combSort(){
         System.out.println("\n\nComb sorting");
 
-        int[] array = new int[10];
+        int[] array = new int[100000];
 
         for (int i = 0; i < array.length; i++) {
             array[i] = random.nextInt(100);
         }
 
-        System.out.println(Arrays.toString(array));
+        //System.out.println(Arrays.toString(array));
 
         int gap_length = array.length;
         float shrinkFactor = 1.3f;
@@ -64,7 +62,7 @@ public class SortingMethods {
             }
         }
 
-        System.out.println(Arrays.toString(array));
+        //System.out.println(Arrays.toString(array));
     }
     private static void swap(int nums[], int x, int y) {
         Integer temp = nums[x];
@@ -76,13 +74,13 @@ public class SortingMethods {
     {
         System.out.println("\n\nShaker sorting");
 
-        int[] array = new int[10];
+        int[] array = new int[100000];
 
         for (int i = 0; i < array.length; i++) {
             array[i] = random.nextInt(100);
         }
 
-        System.out.println(Arrays.toString(array));
+        //System.out.println(Arrays.toString(array));
 
         boolean swapped = true;
         int start = 0;
@@ -123,19 +121,19 @@ public class SortingMethods {
             start = start + 1;
         }
 
-        System.out.println(Arrays.toString(array));
+       // System.out.println(Arrays.toString(array));
     }
 
     void insertionSort(){
         System.out.println("\n\nInsertion sorting");
 
-        int[] array = new int[10];
+        int[] array = new int[100000];
 
         for (int i = 0; i < array.length; i++) {
             array[i] = random.nextInt(100);
         }
 
-        System.out.println(Arrays.toString(array));
+        //System.out.println(Arrays.toString(array));
 
         for (int left = 0; left < array.length; left++) {
             int value = array[left];
@@ -151,6 +149,6 @@ public class SortingMethods {
             }
             array[i + 1] = value;
         }
-        System.out.println(Arrays.toString(array));
+        //System.out.println(Arrays.toString(array));
     }
 }
